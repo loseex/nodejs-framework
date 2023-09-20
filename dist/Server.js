@@ -3,9 +3,13 @@ export class Server {
     constructor(option) {
         this.option = option;
         this.HttpServer = http.createServer((request, response) => {
-            response.statusCode = 200;
             response.setHeader('Content-Type', 'text/plain');
-            response.end('Hello World!');
+            response.statusCode = 200;
+            switch (request.url) {
+                case "/": {
+                    response.end("Index Route");
+                }
+            }
         });
     }
     listen(port, callback) {

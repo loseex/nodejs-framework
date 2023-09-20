@@ -11,9 +11,6 @@
     "dev": "nodemon --experimental-specifier-resolution=node main.js",
     "buildTs": "npx tsc -d src/index.ts --outDir dist --target es6"
   },
-  "imports": {
-    "#helpers": "./helpers.js"
-  },
   "devDependencies": {
     "@types/node": "^20.6.3",
     "nodemon": "^3.0.1",

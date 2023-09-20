@@ -5,9 +5,14 @@ export class Server {
 
     constructor(private readonly option?: {}) {
         this.HttpServer = http.createServer((request:any, response:any) => {
-            response.statusCode = 200;
             response.setHeader('Content-Type', 'text/plain');
-            response.end('Hello World!');
+            response.statusCode = 200;
+
+            switch (request.url) {
+                case "/": {
+                    response.end("Index Route")
+                }
+            }
         })
     }
 
