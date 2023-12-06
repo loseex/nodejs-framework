@@ -1,6 +1,6 @@
 import { Server } from "./dist";
 
-export async function Main () {
+export async function bootstrap () {
     try {
         const srv = new Server({});
         srv.listen(6000, () => console.log("Server is enabled: 5000"));
@@ -10,5 +10,5 @@ export async function Main () {
     }
 }
 
-Main().catch(err => console.log(err));
+bootstrap().catch(err => console.log(err));
 
